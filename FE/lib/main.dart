@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import 'features/beranda/pages/beranda_page.dart';
-import 'features/data_warga/pages/data_warga_page.dart';
-import 'features/kegiatan/pages/kegiatan_page.dart';
-import 'features/keuangan/pages/keuangan_page.dart';
-import 'features/lainnya/pages/lainnya_page.dart';
+import 'core/widgets/bottom_navbar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,61 +15,6 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(primarySwatch: Colors.blue, useMaterial3: true),
       home: const MainPage(),
       debugShowCheckedModeBanner: false,
-    );
-  }
-}
-
-class MainPage extends StatefulWidget {
-  const MainPage({super.key});
-
-  @override
-  State<MainPage> createState() => _MainPageState();
-}
-
-class _MainPageState extends State<MainPage> {
-  int _selectedIndex = 0;
-
-  final List<Widget> _pages = [
-    const BerandaPage(),
-    const DataWargaPage(),
-    const KegiatanPage(),
-    const KeuanganPage(),
-    const LainnyaPage(),
-  ];
-
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: _pages[_selectedIndex],
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _selectedIndex,
-        onTap: _onItemTapped,
-        type: BottomNavigationBarType.fixed,
-        selectedItemColor: Colors.blue,
-        unselectedItemColor: Colors.grey,
-        items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Beranda'),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.people),
-            label: 'Data Warga',
-          ),
-          BottomNavigationBarItem(icon: Icon(Icons.event), label: 'Kegiatan'),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.account_balance_wallet),
-            label: 'Keuangan',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.more_horiz),
-            label: 'Lainnya',
-          ),
-        ],
-      ),
     );
   }
 }

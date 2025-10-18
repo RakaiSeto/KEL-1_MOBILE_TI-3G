@@ -14,44 +14,52 @@ class BerandaKeuanganPage extends StatelessWidget {
         children: [
           // === STATISTIC CARDS ===
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: const [
-              InfoCard(
-                icon: Icons.savings,
-                title: 'Total Pemasukan',
-                value: '10 ribu',
-                color: Colors.green,
+              Expanded(
+                child: InfoCard(
+                  icon: Icons.savings,
+                  title: 'Total Pemasukan',
+                  value: '10 ribu',
+                  color: Colors.green,
+                ),
               ),
-              InfoCard(
-                icon: Icons.money_off,
-                title: 'Total Pengeluaran',
-                value: '10 ribu',
-                color: Colors.red,
+              Expanded(
+                child: InfoCard(
+                  icon: Icons.money_off,
+                  title: 'Total Pengeluaran',
+                  value: '10 ribu',
+                  color: Colors.red,
+                ),
               ),
-              InfoCard(
-                icon: Icons.receipt_long,
-                title: 'Jumlah Transaksi',
-                value: '10 ribu',
-                color: Colors.amber,
+              Expanded(
+                child: InfoCard(
+                  icon: Icons.receipt_long,
+                  title: 'Jumlah Transaksi',
+                  value: '10 ribu',
+                  color: Colors.amber,
+                ),
               ),
             ],
           ),
           const SizedBox(height: 16),
 
           // === CHART SECTIONS ===
-          const BarChartCard(title: 'Pemasukan perbulan', color: Colors.purple),
+          const BarChartCard(
+            title: 'Pemasukan per Bulan',
+            color: Colors.purple,
+          ),
           const SizedBox(height: 16),
-          const BarChartCard(title: 'Pengeluaran perbulan', color: Colors.red),
+          const BarChartCard(title: 'Pengeluaran per Bulan', color: Colors.red),
           const SizedBox(height: 16),
           const PieChartCard(
-            title: 'Pemasukan berdasarkan kategori',
-            subtitle: 'Pendapatan lainnya',
+            title: 'Pemasukan Berdasarkan Kategori',
+            subtitle: 'Pendapatan Lainnya',
             color: Colors.purple,
           ),
           const SizedBox(height: 16),
           const PieChartCard(
-            title: 'Pengeluaran berdasarkan kategori',
-            subtitle: 'Pendapatan lainnya',
+            title: 'Pengeluaran Berdasarkan Kategori',
+            subtitle: 'Belanja Rutin',
             color: Colors.green,
           ),
         ],

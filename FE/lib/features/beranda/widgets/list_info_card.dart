@@ -16,48 +16,49 @@ class ListInfoCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-      elevation: 1,
-      margin: const EdgeInsets.symmetric(vertical: 4),
-      child: Padding(
-        padding: const EdgeInsets.all(12),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            // Header
-            Row(
-              children: [
-                Icon(icon, color: color),
-                const SizedBox(width: 8),
-                Text(
+    return Container(
+      padding: const EdgeInsets.all(12),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(color: Colors.grey.shade200),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              Icon(icon, color: color, size: 22),
+              const SizedBox(width: 8),
+              Expanded(
+                child: Text(
                   title,
                   style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 14,
                   ),
                 ),
-              ],
-            ),
-            const SizedBox(height: 8),
-
-            // List Items
-            ...items.map(
-              (item) => Padding(
-                padding: const EdgeInsets.only(left: 4, bottom: 4),
-                child: Row(
-                  children: [
-                    const Icon(Icons.circle, size: 6, color: Colors.grey),
-                    const SizedBox(width: 6),
-                    Expanded(
-                      child: Text(item, style: const TextStyle(fontSize: 13)),
-                    ),
-                  ],
-                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 8),
+          // list items
+          ...items.map(
+            (it) => Padding(
+              padding: const EdgeInsets.symmetric(vertical: 4),
+              child: Row(
+                children: [
+                  const SizedBox(width: 4),
+                  const Icon(Icons.circle, size: 6, color: Colors.grey),
+                  const SizedBox(width: 8),
+                  Expanded(
+                    child: Text(it, style: const TextStyle(fontSize: 13)),
+                  ),
+                ],
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

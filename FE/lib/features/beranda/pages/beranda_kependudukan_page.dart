@@ -10,49 +10,60 @@ class BerandaKependudukanPage extends StatelessWidget {
     return SingleChildScrollView(
       padding: const EdgeInsets.all(16),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           // === INFO CARDS ===
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: const [
-              InfoCard(
-                icon: Icons.family_restroom,
-                title: 'Total Keluarga',
-                value: '2',
-                color: Colors.red,
+              Expanded(
+                child: InfoCard(
+                  icon: Icons.family_restroom,
+                  title: 'Total Keluarga',
+                  value: '2',
+                  color: Colors.red,
+                ),
               ),
-              InfoCard(
-                icon: Icons.groups_2,
-                title: 'Total Penduduk',
-                value: '3',
-                color: Colors.purple,
+              SizedBox(width: 8),
+              Expanded(
+                child: InfoCard(
+                  icon: Icons.groups_2,
+                  title: 'Total Penduduk',
+                  value: '3',
+                  color: Colors.purple,
+                ),
               ),
             ],
           ),
           const SizedBox(height: 16),
 
-          // === PIE CHART SECTIONS ===
+          // === PIE CHART: STATUS PENDUDUK ===
           const PieChartCard(
             title: 'Status Penduduk',
-            subtitle: 'Pendapatan lainnya',
+            subtitle: 'Status domisili dan keberadaan penduduk',
             color: Colors.purple,
           ),
           const SizedBox(height: 16),
+
+          // === PIE CHART: JENIS KELAMIN ===
           const PieChartCard(
             title: 'Jenis Kelamin Penduduk',
-            subtitle: 'Pendapatan lainnya',
+            subtitle: 'Perbandingan jumlah laki-laki dan perempuan',
             color: Colors.green,
           ),
           const SizedBox(height: 16),
+
+          // === PIE CHART: PEKERJAAN ===
           const PieChartCard(
             title: 'Pekerjaan Penduduk',
-            subtitle: 'Pendapatan lainnya',
+            subtitle: 'Distribusi pekerjaan di masyarakat',
             color: Colors.orange,
           ),
           const SizedBox(height: 16),
+
+          // === PIE CHART: PERAN DALAM KELUARGA ===
           const PieChartCard(
             title: 'Peran dalam Keluarga',
-            subtitle: 'Pendapatan lainnya',
+            subtitle: 'Kepala keluarga, pasangan, anak, dan lainnya',
             color: Colors.blue,
           ),
         ],
